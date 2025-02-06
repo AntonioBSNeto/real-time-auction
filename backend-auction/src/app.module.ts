@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { RedisService } from './redis/redis.service';
 import { AuthModule } from './auth/auth.module';
+import { AuctionModule } from './auction/auction.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { AuthModule } from './auth/auth.module';
       synchronize: true, // Em produção, desativar!
     }),
     AuthModule,
+    AuctionModule,
   ],
   controllers: [AppController],
   providers: [AppService, RedisService],
